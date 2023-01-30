@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<head>
+
+</head>
+<body>
+    <h1>
+        {% for i in Snews %}
+        <img style="max-width:500px;" src="{{ i.cover_img.url }}">
+        <br>
+        <a href="{% url 'read' i.id %}"> {{i.title}} </a>
+    </h1>
+        <a href="{% url 'update' i.id %}"> Edit </a>
+        <a href="{% url 'delete' i.id %}">Delete</a>
+        {% endfor %}
+
+    
+    <button type="button"><a href="{% url 'create' %}">Create News</a> </button>
+</body>
+</html>
